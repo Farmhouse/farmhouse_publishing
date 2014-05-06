@@ -20,6 +20,15 @@ class FarmhousePublishing
         end
 
         puts "TITLE: #{title}"
+        puts "SLUG:  #{sluggify title}"
+        puts "TODO:  `git clone Farmhouse/fhp-photo-book-template`"
+        puts "TODO:  populate _config.yml.erb with title and slug"
+      end
+
+
+      # move to gem, or at least into /lib
+      def sluggify(text, separator="-")
+        text.downcase.gsub(/_|\s|\W/, separator).gsub(/-{2,}/, separator).gsub(/(-)+$/, "")
       end
 
     end
