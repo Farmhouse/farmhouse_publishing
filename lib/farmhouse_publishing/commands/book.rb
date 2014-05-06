@@ -1,9 +1,15 @@
-class Book
-  def default
-    puts "in Book#default"
-  end
+class FarmhousePublishing
+  class Book
+    class << self
 
-  def new
-    puts "in Book#new"
+      def default
+        puts "in Book#default"
+      end
+
+      def create
+        puts "in Book#create"
+      end
+
+    end
   end
 end
