@@ -17,14 +17,14 @@ Alias `farmhouse_publishing` to `fhp` for less typing.
 Create a new photo book:
 
 ```
-fhp new photo "[Title of the Book]"
+fhp book:new "[Title of the Book]"
 ```
 
 Create and push the book repo to GitHub.
 
 ```
-fhp github create
-fhp github push
+fhp github:create
+fhp github:push
 ```
 
 Re/run the configuration wizard.
@@ -36,13 +36,13 @@ fhp config
 Show the value of a configuration setting.
 
 ```
-fhp config [setting]
+fhp config:[setting]
 ```
 
 Set the value of a configuration setting.
 
 ```
-fhp config [setting] [value]
+fhp config:[setting] [value]
 ```
 
 
