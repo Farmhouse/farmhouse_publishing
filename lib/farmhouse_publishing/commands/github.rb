@@ -2,15 +2,15 @@ class FarmhousePublishing
   class Github
     class << self
 
-      def default
+      def default(options=nil)
         puts "in Github#default"
       end
 
-      def create
+      def create(options=nil)
         puts "in Github#create"
       end
 
-      def push
+      def push(options=nil)
         puts "in Github#push"
       end
 
