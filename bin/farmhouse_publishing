@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+if ARGV.empty?
+  puts "HELP! Need more commands!"
+  exit
+end
+
+name_spaced_task = ARGV.shift.match(/^(\w+)(:*)(\w*)$/)
+name_space       = name_spaced_task[1].capitalize
+
+if name_spaced_task[2] == ":"
+  task = name_spaced_task[3]
+else
+  task = "default"
+end
+
+require "farmhouse_publishing/commands/#{name_space.downcase}"
+if ARGV.empty?
+  FarmhousePublishing.const_get(name_space).send(task.to_sym)
+else
+  FarmhousePublishing.const_get(name_space).send(task.to_sym, ARGV)
+end
